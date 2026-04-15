@@ -94,14 +94,138 @@ I am personally using linux mint for this project, so it may be different depend
    The rest of the prompts for this section are pretty self explanatory, so just finish them up and you'll be done with this step.
 
 
-6. Use threat detection queries by navigating to "Search and Reporting" on the main dashboard on the left hand side:
+6. Use threat detection queries by navigating to "Search & Reporting" on the main dashboard on the left hand side:
 
   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/1cd82f4b-d95e-41bd-a954-c55412e574e3" />
 
 
-  Once you're there you can try entering some queries and viewing the results, in the screenshot example we're viewing all the failed login attempts in the logs.txt file, there are only a few as this is just an example. If nothing is showing up when you search, setting the time range to "All time" because these logs are dated.
+  Once you're there you can try entering some queries and viewing the results, in the screenshot example we're viewing all the failed login attempts in the logs.txt file, there are only a few as this is just an example. If nothing is showing up when you search, setting the time range to "All time" because these logs are dated. Since this lab uses basic log ingestion without field extraction, we analyze activity using mostly raw log patterns. This would differ from a real enterprise environment.
 
   <img width="2234" height="287" alt="image" src="https://github.com/user-attachments/assets/8500ad7e-4d8c-4be5-823f-b8ba6ddd8435" />
+
+  With the query used, after hitting the search button the results appear as follows:
+  
+  <img width="2235" height="620" alt="image" src="https://github.com/user-attachments/assets/e2f34f05-d6db-4183-aeaa-d6d157c4106e" />
+
+
+   Here are a few queries you can try: 
+   
+   index=main "LOGIN_FAILED" | stats count by _raw    (Shows all failed login attempts, can be useful in identifying a brute force attack when there are a ton of these in a short time frame)
+
+   index=main "LOGIN_SUCCESS"    (Shows all successful logins)
+
+   index=main ("LOGIN_SUCCESS" OR "LOGIN_FAILED") | stats count by _raw    (Shows both failed and successful login attempts)
+
+   index=main "ACCESS_CONFIDENTIAL_FILE"    (Shows an event where a confidential file was accessed in our example)
+
+   Feel free to try and construct some of your own!
+
+
+7. Create a monitoring dashboard:
+
+   Navigate to Search & Reporting from the main dashboard > then select dashboards at the top:
+   
+
+   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/56bacee1-b589-4b9a-b88a-a0d18c2b76f5" />
+
+
+   Then select "Create New Dashboard" in the top right:
+
+
+  <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/b56a51c8-08ec-40bf-839a-edc6f5257261" />
+
+
+   Feel free to create it however you want, but for this example I'll be using the following options and classic dashboards:
+
+
+   <img width="570" height="530" alt="image" src="https://github.com/user-attachments/assets/66dd7e48-5592-4d16-a5eb-481ce8770607" />
+
+
+   Once you're here you'll want to add a panel with the "+Add Panel" option on the top row beside "Edit Dashboard":
+   In the "Add Panel" options, you can do many different things. This part of splunk is very flexible and allows monitoring in
+   the form of graphs, events, charts, tables etc. In this example we keep it simple because our default log file is very simple:
+
+  Select New > Events > and input the query (index=main "LOGIN_FAILED") in the "Search String" box:
+
+
+  <img width="1113" height="885" alt="image" src="https://github.com/user-attachments/assets/1503c82e-80fd-4e2c-b36c-66e38c5ec020" />
+
+
+  Once you add this event monitor to the dashboard, it'll show up like so:
+
+
+  <img width="1116" height="429" alt="image" src="https://github.com/user-attachments/assets/a33b380b-b7d4-4705-bc33-1d52aeefb486" />
+
+
+
+  This allows you to see all the failed login attempts from our logs.txt file. Feel free to create some other ones, you will soon find that you can make all sorts of them depending on your needs.
+
+
+8. Create alerts:
+
+     You can create alerts which will be triggered by a certain event occuring:
+
+     Navigate to the "Search & Reporting" section once again and run a search query:
+
+
+     <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/ae51022a-2755-43d7-8155-38f5357e580d" />
+
+
+     In this example we use access of a confidential file, because that may be something a security operations team would want to keep track of and verify. Once you perform the search query select "Save As" and then "Alert":
+
+
+   
+<img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/ad2c82b0-e9e7-4f6e-a8b6-68c5f57b0429" />
+
+
+  Again we are given a plethora of options to choose from, but in this example I've configured it as follows: 
+
+
+  <img width="779" height="919" alt="image" src="https://github.com/user-attachments/assets/cd381234-9a98-4aa8-b1e5-828e9b906fc9" />
+
+
+  This sets the alert to run on a schedule every five minutes as a cron job in order to simulate real time evaluation of logs. In a real environemnt we would use the real-time analysis feature, but that is beyond the scope of this basic project.
+
+  After saving the alert, you can view it along with all the times that it has been triggered:
+
+
+  <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/de432b4c-37b4-48ab-922b-a8c78a93995c" />
+
+
+  Upon hitting the "view results" button, you can see more info about the alert and what happened:
+
+
+  <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/63259a5b-993e-4902-b5ac-285e9a48a020" />
+
+
+
+
+
+
+
+
+
+That's all for this basic walkthrough! I may expand upon this in the future by adding some EDR features using agents on virtual machines to simulate real time analysis of endpoints. Feel free to try this project out for yourself in order to get your feet wet with using splunk. If you've read this far into my project thank you very much and I appreciate your time! As always get curious, explore, learn, and most of all have fun with it!
+
+
+
+
+
+     
+
+
+
+  
+
+
+
+
+
+   
+
+
+     
+   
 
 
 
