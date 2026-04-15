@@ -121,7 +121,7 @@ I am personally using linux mint for this project, so it may be different depend
    Feel free to try and construct some of your own!
 
 
- 7. Create a monitoring dashboard:
+7. Create a monitoring dashboard:
 
    Navigate to Search & Reporting from the main dashboard > then select dashboards at the top:
    
@@ -159,7 +159,6 @@ I am personally using linux mint for this project, so it may be different depend
 
 
   This allows you to see all the failed login attempts from our logs.txt file. Feel free to create some other ones, you will soon find that you can make all sorts of them depending on your needs.
-
 
 8. Create alerts:
 
