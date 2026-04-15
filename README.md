@@ -19,8 +19,41 @@ I am personally using linux mint for this project, so it may be different depend
     If you recieve any errors related to dependencies you can try running: sudo apt-get install -f
 
    <img width="1108" height="327" alt="image" src="https://github.com/user-attachments/assets/39a84d10-ddbb-4fe5-8fac-d7a9695f5621" />
+  
+
+3. Start splunk by first using chown to give your user account the permission it needs for this process:
+    sudo chown -R $USER:$USER /opt/splunk
+   Then run:
+    /opt/splunk/bin/splunk start --accept-license
 
 
+   <img width="473" height="48" alt="image" src="https://github.com/user-attachments/assets/1f5684a6-9a62-4e96-9e43-9c2afa9fdc73" />
 
-4. 
+   
+   <img width="1111" height="1357" alt="image" src="https://github.com/user-attachments/assets/26324d1a-450d-4b4f-917a-c0e909f4df93" />
+
+   
+
+   You will be prompted to set a user name and password for the administrator account, because I already have an administrator account created I was not prompted to do so in these screenshots. You can set the login to whatever you please.
+
+
+4. Access splunk via the web user interface with: http://localhost:8000
+   It will differ depending on your localhost for example mine is depicted in the above screenshot as http://Mint:8000
+   
+
+   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/63043001-0292-459b-8708-06dceeb55f99" />
+
+
+   You will be prompted to log in using the username and password that you had previously set in the command line interface for the administartor account.
+   Once you enter the username and password correctly you will be allowed access to the dashboard.
+   (Side note: If you'd like to make splunk start on boot you can use this command in the shell: sudo /opt/splunk/bin/splunk enable boot-start)
+
+
+   
+   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/9f2bcd0d-2e9b-47e8-9aa2-b5fdbf1c871d" />
+
+   
+
+   
+
    
