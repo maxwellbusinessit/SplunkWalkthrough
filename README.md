@@ -94,7 +94,7 @@ I am personally using linux mint for this project, so it may be different depend
    The rest of the prompts for this section are pretty self explanatory, so just finish them up and you'll be done with this step.
 
 
-6. Use threat detection queries by navigating to "Search & Reporting" on the main dashboard on the left hand side:
+ 6. Use threat detection queries by navigating to "Search & Reporting" on the main dashboard on the left hand side:
 
   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/1cd82f4b-d95e-41bd-a954-c55412e574e3" />
 
@@ -121,7 +121,7 @@ I am personally using linux mint for this project, so it may be different depend
    Feel free to try and construct some of your own!
 
 
-7. Create a monitoring dashboard:
+ 7. Create a monitoring dashboard:
 
    Navigate to Search & Reporting from the main dashboard > then select dashboards at the top:
    
