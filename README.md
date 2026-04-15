@@ -77,9 +77,6 @@ I am personally using linux mint for this project, so it may be different depend
    <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/17938589-c14a-4789-85f4-bd05c99b5376" />
 
 
-   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/f4a1406f-683f-4a0d-a3af-905f0ab81d5b" />
-
-
    When prompted to set the source type, you can just set it as default and hit apply settings:
    
    <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e04f5979-d8e8-4a6a-9c9a-2ddfa622d7f1" />
