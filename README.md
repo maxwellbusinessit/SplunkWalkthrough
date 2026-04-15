@@ -81,14 +81,17 @@ I am personally using linux mint for this project, so it may be different depend
 
 
    When prompted to set the source type, you can just set it as default and hit apply settings:
+   
    <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e04f5979-d8e8-4a6a-9c9a-2ddfa622d7f1" />
 
 
    Then you can select these settings in the prompt:
+   
    <img width="546" height="359" alt="image" src="https://github.com/user-attachments/assets/89692079-6d5f-49ff-8edd-4613d6f50d21" />
 
 
    Next, set the index to main and leave the host value as the default, for me it is Mint.
+   
    <img width="1110" height="808" alt="image" src="https://github.com/user-attachments/assets/eea03b7c-e9e4-4edf-8de5-d96665e2342e" />
    
    The rest of the prompts for this section are pretty self explanatory, so just finish them up and you'll be done with this step.
