@@ -44,13 +44,61 @@ I am personally using linux mint for this project, so it may be different depend
    <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/63043001-0292-459b-8708-06dceeb55f99" />
 
 
-   You will be prompted to log in using the username and password that you had previously set in the command line interface for the administartor account.
+   You will be prompted to log in using the username and password that you had previously set in the command line interface for the administrator account.
    Once you enter the username and password correctly you will be allowed access to the dashboard.
    (Side note: If you'd like to make splunk start on boot you can use this command in the shell: sudo /opt/splunk/bin/splunk enable boot-start)
 
 
    
    <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/9f2bcd0d-2e9b-47e8-9aa2-b5fdbf1c871d" />
+
+
+   From here on you can do whatever you'd like, but if you want to try ingesting some sample logs and experimenting with them follow the next few steps:
+
+
+5. Create a sample log (logs.txt) and populate it with the following data (Or you can use logs from the internet for extra brownie points):
+
+   2026-04-15 10:01:23 LOGIN_SUCCESS user1 192.168.1.10
+   2026-04-15 10:02:10 LOGIN_FAILED user1 192.168.1.10
+   2026-04-15 10:02:15 LOGIN_FAILED user1 192.168.1.10
+   2026-04-15 10:02:20 LOGIN_FAILED user1 192.168.1.10
+   2026-04-15 10:05:00 ACCESS_CONFIDENTIAL_FILE user2
+
+
+    Navigate to Settings > Add Data in the top right corner
+
+
+   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/6c9bdcfe-62b3-4108-927a-bcec61d15de7" />
+
+
+    Then select upload from my computer and select your logs.txt file:
+
+
+   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/17938589-c14a-4789-85f4-bd05c99b5376" />
+
+
+   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/f4a1406f-683f-4a0d-a3af-905f0ab81d5b" />
+
+
+   When prompted to set the source type, you can just set it as default and hit apply settings:
+   <img width="2240" height="1400" alt="image" src="https://github.com/user-attachments/assets/e04f5979-d8e8-4a6a-9c9a-2ddfa622d7f1" />
+
+
+   Then you can select these settings in the prompt:
+   <img width="546" height="359" alt="image" src="https://github.com/user-attachments/assets/89692079-6d5f-49ff-8edd-4613d6f50d21" />
+
+
+   Next, set the index to main and leave the host value as the default, for me it is Mint.
+   <img width="1110" height="808" alt="image" src="https://github.com/user-attachments/assets/eea03b7c-e9e4-4edf-8de5-d96665e2342e" />
+   
+   The rest of the prompts for this section are pretty self explanatory, so just finish them up and you'll be done with this step.
+
+
+
+
+
+   
+
 
    
 
